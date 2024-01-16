@@ -32,7 +32,7 @@ void ESP32ImprovComponent::setup() {
     });
   }
 #endif
-    global_ble_server->set_manufacturer("Signify");
+    global_ble_server->set_manufacturer("Signify Netherlands B.V.");
 }
 
 void ESP32ImprovComponent::setup_characteristics() {
