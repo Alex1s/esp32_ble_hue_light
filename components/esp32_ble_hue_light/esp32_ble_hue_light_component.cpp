@@ -10,6 +10,7 @@
 namespace esphome {
 namespace esp32_ble_hue_light {
 
+// following was UUIDs were copied from esphome/components/esp32_ble_server/ble_server.cpp
 static const uint16_t DEVICE_INFORMATION_SERVICE_UUID = 0x180A;
 static const uint16_t MODEL_UUID = 0x2A24;
 static const uint16_t VERSION_UUID = 0x2A26;
@@ -31,6 +32,7 @@ void ESP32ImprovComponent::setup() {
     });
   }
 #endif
+    global_ble_server->set_manufacturer("Signify");
 }
 
 void ESP32ImprovComponent::setup_characteristics() {
@@ -79,11 +81,11 @@ void ESP32ImprovComponent::loop() {
   }
   if (this->service_ == nullptr) {
     // update Device Information
-    BLEService *device_information_service = global_ble_server->get_service(ESPBTUUID::from_uint16(DEVICE_INFORMATION_SERVICE_UUID));
-    BLECharacteristic *manufacturer_name_string_characteristic = device_information_service->get_characteristic(MANUFACTURER_UUID);
-    manufacturer_name_string_characteristic->set_value("Signify"); // does this now actually auto update?
-    global_ble_server->set_manufacturer("Signify"); // just for consistency, does not actually do anything ...
-    global_ble_server->set_manufacturer_data(std::vector<uint8_t>{0x02, 0x10, 0xFF, 0xFF, 0x05});
+    //BLEService *device_information_service = global_ble_server->get_service(ESPBTUUID::from_uint16(DEVICE_INFORMATION_SERVICE_UUID));
+    //BLECharacteristic *manufacturer_name_string_characteristic = device_information_service->get_characteristic(MANUFACTURER_UUID);
+    //manufacturer_name_string_characteristic->set_value("Signify"); // does this now actually auto update?
+    //global_ble_server->set_manufacturer("Signify"); // just for consistency, does not actually do anything ...
+    //global_ble_server->set_manufacturer_data(std::vector<uint8_t>{0x02, 0x10, 0xFF, 0xFF, 0x05});
 
     // Setup the service
     ESP_LOGD(TAG, "Creating Improv service");
