@@ -5,7 +5,7 @@
 #ifdef USE_ESP32
 
 namespace esphome {
-namespace esp32_ble_server {
+namespace esp32_ble_hue_light {
 
 static const char *const TAG = "esp32_ble_server.service";
 
@@ -171,7 +171,7 @@ void BLEService::gatts_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t g
   }
 }
 
-}  // namespace esp32_ble_server
+}  // namespace esp32_ble_hue_light
 }  // namespace esphome
 
 #endif

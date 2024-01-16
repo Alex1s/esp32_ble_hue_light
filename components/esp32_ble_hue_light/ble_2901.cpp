@@ -4,7 +4,7 @@
 #ifdef USE_ESP32
 
 namespace esphome {
-namespace esp32_ble_server {
+namespace esp32_ble_hue_light {
 
 BLE2901::BLE2901(const std::string &value) : BLE2901((uint8_t *) value.data(), value.length()) {}
 BLE2901::BLE2901(const uint8_t *data, size_t length) : BLEDescriptor(esp32_ble::ESPBTUUID::from_uint16(0x2901)) {
@@ -12,7 +12,7 @@ BLE2901::BLE2901(const uint8_t *data, size_t length) : BLEDescriptor(esp32_ble::
   this->permissions_ = ESP_GATT_PERM_READ;
 }
 
-}  // namespace esp32_ble_server
+}  // namespace esp32_ble_hue_light
 }  // namespace esphome
 
 #endif

@@ -21,7 +21,7 @@
 #include <esp_gatts_api.h>
 
 namespace esphome {
-namespace esp32_ble_server {
+namespace esp32_ble_hue_light {
 
 using namespace esp32_ble;
 
@@ -97,7 +97,7 @@ class BLEServer : public Component, public GATTsEventHandler, public BLEStatusEv
 // NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
 extern BLEServer *global_ble_server;
 
-}  // namespace esp32_ble_server
+}  // namespace esp32_ble_hue_light
 }  // namespace esphome
 
 #endif

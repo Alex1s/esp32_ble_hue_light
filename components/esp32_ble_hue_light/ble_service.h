@@ -14,7 +14,7 @@
 #include <esp_gatts_api.h>
 
 namespace esphome {
-namespace esp32_ble_server {
+namespace esp32_ble_hue_light {
 
 class BLEServer;
 
@@ -84,7 +84,7 @@ class BLEService {
   } running_state_{STOPPED};
 };
 
-}  // namespace esp32_ble_server
+}  // namespace esp32_ble_hue_light
 }  // namespace esphome
 
 #endif

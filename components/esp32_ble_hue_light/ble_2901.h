@@ -5,7 +5,7 @@
 #ifdef USE_ESP32
 
 namespace esphome {
-namespace esp32_ble_server {
+namespace esp32_ble_hue_light {
 
 class BLE2901 : public BLEDescriptor {
  public:
@@ -13,7 +13,7 @@ class BLE2901 : public BLEDescriptor {
   BLE2901(const uint8_t *data, size_t length);
 };
 
-}  // namespace esp32_ble_server
+}  // namespace esp32_ble_hue_light
 }  // namespace esphome
 
 #endif
