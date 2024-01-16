@@ -74,7 +74,7 @@ void ESP32ImprovComponent::loop() {
   }
   if (this->service_ == nullptr) {
     // update Device Information
-    global_ble_server->set_manufacturer("Signify Netherlands B.V.");
+    global_ble_server->set_manufacturer("Signify");
     global_ble_server->set_manufacturer_data(std::vector<uint8_t>{0x02, 0x10, 0xFF, 0xFF, 0x05});
 
     // Setup the service
