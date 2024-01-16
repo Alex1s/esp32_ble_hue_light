@@ -74,7 +74,10 @@ void ESP32ImprovComponent::loop() {
   }
   if (this->service_ == nullptr) {
     // update Device Information
-    global_ble_server->set_manufacturer("Signify");
+    BLEService *device_information_service = global_ble_server->get_service(ESPBTUUID::from_uint16(DEVICE_INFORMATION_SERVICE_UUID));
+    BLECharacteristic *manufacturer_name_string_characteristic = device_information_service->get_characteristic();
+    manufacturer_name_string_characteristic->set_value("Signify");
+    //global_ble_server->set_manufacturer("Signify");
     global_ble_server->set_manufacturer_data(std::vector<uint8_t>{0x02, 0x10, 0xFF, 0xFF, 0x05});
 
     // Setup the service
