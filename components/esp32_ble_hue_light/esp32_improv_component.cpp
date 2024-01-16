@@ -8,9 +8,9 @@
 #ifdef USE_ESP32
 
 namespace esphome {
-namespace esp32_improv {
+namespace esp32_ble_hue_light {
 
-static const char *const TAG = "esp32_improv.component";
+static const char *const TAG = "esp32_ble_hue_light.component";
 static const char *const ESPHOME_MY_LINK = "https://my.home-assistant.io/redirect/config_flow_start?domain=esphome";
 
 ESP32ImprovComponent::ESP32ImprovComponent() { global_improv_component = this; }
@@ -331,7 +331,7 @@ void ESP32ImprovComponent::on_client_disconnect() { this->set_error_(improv::ERR
 
 ESP32ImprovComponent *global_improv_component = nullptr;  // NOLINT(cppcoreguidelines-avoid-non-const-global-variables)
 
-}  // namespace esp32_improv
+}  // namespace esp32_ble_hue_light
 }  // namespace esphome
 
 #endif

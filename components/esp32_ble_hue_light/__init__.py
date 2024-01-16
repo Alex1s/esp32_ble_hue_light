@@ -16,8 +16,8 @@ CONF_IDENTIFY_DURATION = "identify_duration"
 CONF_STATUS_INDICATOR = "status_indicator"
 CONF_WIFI_TIMEOUT = "wifi_timeout"
 
-esp32_improv_ns = cg.esphome_ns.namespace("esp32_improv")
-ESP32ImprovComponent = esp32_improv_ns.class_(
+esp32_ble_hue_light_ns = cg.esphome_ns.namespace("esp32_ble_hue_light")
+ESP32ImprovComponent = esp32_ble_hue_light_ns.class_(
     "ESP32ImprovComponent", cg.Component, esp32_ble_server.BLEServiceComponent
 )
 
